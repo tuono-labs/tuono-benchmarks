@@ -1,5 +1,10 @@
 # Tuono benchmarks
 
+> [!WARNING]
+> This repo is a work in progress.
+>
+> [Go to tuono repository `benches` folder](https://github.com/tuono-labs/tuono/tree/main/benches)
+
 This repo includes multiple setups to compare the HTTP performance against
 tuono and other frameworks.
 
