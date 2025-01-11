@@ -28,7 +28,7 @@ to mock an heavy network load over the application server.
 
 ## Last benchmarked version results
 
-Tuono [v0.9.2](/benchmarks/v0.9.2)
+Tuono [v0.17.0](/benchmarks/v0.17.0)
 
 ```
 // Tuono
@@ -41,11 +41,11 @@ Tuono [v0.9.2](/benchmarks/v0.9.2)
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    79.72ms  162.90ms   1.71s    87.70%
-    Req/Sec    11.50k    15.04k   42.40k    67.36%
-  4111435 requests in 30.06s, 3.03GB read
-Requests/sec: 136788.14
-Transfer/sec:    103.08MB
+    Latency    10.10ms    8.60ms 328.41ms   92.91%
+    Req/Sec     3.47k   369.32     4.35k    92.02%
+  1241083 requests in 30.02s, 700.90MB read
+Requests/sec:  41341.09
+Transfer/sec:     23.35MB
 ```
 
 ```
@@ -59,11 +59,11 @@ Transfer/sec:    103.08MB
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    36.02ms   21.81ms 608.77ms   93.99%
-    Req/Sec     0.96k   183.53     3.38k    84.99%
-  344202 requests in 30.10s, 493.73MB read
-Requests/sec:  11434.43
-Transfer/sec:     16.40MB
+    Latency    40.86ms   36.33ms 964.36ms   97.35%
+    Req/Sec     0.88k   141.64     2.36k    82.48%
+  311635 requests in 30.08s, 445.20MB read
+Requests/sec:  10358.80
+Transfer/sec:     14.80MB
 ```
 
 ```
@@ -77,9 +77,9 @@ Transfer/sec:     16.40MB
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    61.03ms   18.65ms 341.31ms   86.25%
-    Req/Sec   547.55     96.59     1.16k    80.59%
-  195590 requests in 30.10s, 715.91MB read
-Requests/sec:   6498.62
-Transfer/sec:     23.79MB
+    Latency    39.96ms   22.27ms 676.87ms   92.92%
+    Req/Sec     0.86k   156.94     1.44k    80.99%
+  306113 requests in 30.10s, 437.31MB read
+Requests/sec:  10170.10
+Transfer/sec:     14.53MB
 ```
