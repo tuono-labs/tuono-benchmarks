@@ -1,34 +1,6 @@
-# Tuono benchmarks
+# Benchmarks
 
-This repo includes multiple setups to compare the HTTP performance against
-tuono and other frameworks (check the `benchmarks/` directory).
-
-The main goal is to make the comparison as fair as possible enhancing each framework specific
-performance improvements.
-
-Any improvement to the benchmarks or implementation of a different framework is strongly appreciated.
-
-Feel free also to try it with your hardware and open an issue in case you spot significant different results.
-
-## Benchmark setup
-
-In order to make each comparison as fair as possible each framework should contain a single server side
-rendered page that requires data from the backend service.
-
-The data returned by the backend service should be a JSON including a random number between 0 and 10.
-
-```json
-{
-  "data": 0
-}
-```
-
-Then the benchmark is triggered by running the production server and query the `/` endpoint with [wrk](https://github.com/wg/wrk)
-to mock an heavy network load over the application server.
-
-## Last benchmarked version results
-
-Tuono [v0.9.2](/benchmarks/v0.9.2)
+## Results
 
 ```
 // Tuono
