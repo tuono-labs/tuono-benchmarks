@@ -1,32 +1,6 @@
-# Tuono benchmarks
+# Benchmarks v0.17.0
 
-This repository contains various setups to compare the HTTP performance of Tuono with other frameworks. Please refer to the [`benchmarks`](./benchmarks/) directory for more details.
-
-The main goal is to make the comparison as fair as possible enhancing each framework specific
-performance improvements.
-
-Any improvement to the benchmarks or implementation of a different framework is strongly appreciated.
-
-Feel free also to try it with your hardware and open an issue in case you spot significant different results.
-
-## Benchmark setup
-
-In order to make each comparison as fair as possible each framework should contain a single server side
-rendered page that requires data from the backend service.
-
-The data returned by the backend service should be a JSON including a random number between 0 and 10.
-
-```json
-{
-  "data": 0
-}
-```
-
-The benchmark is triggered by running the production server and querying the `/` endpoint with [wrk](https://github.com/wg/wrk) to simulate a heavy network load on the application.
-
-## Last benchmarked version results
-
-[v0.17.0](/benchmarks/v0.17.0)
+## Results
 
 ### Tuono
 
@@ -40,7 +14,7 @@ wrk -t12 -c400 -d30s http://localhost:3000/
 ```
 
 ```text
-Running 30s test @ <http://localhost:3000/>
+Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency    10.10ms    8.60ms 328.41ms   92.91%
@@ -80,7 +54,7 @@ pm2 start ./ecosystem.config.js
 ```
 
 ```sh
-> wrk -t12 -c400 -d30s http://localhost:3000/
+wrk -t12 -c400 -d30s http://localhost:3000/
 ```
 
 ```text

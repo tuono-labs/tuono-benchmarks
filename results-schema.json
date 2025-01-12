@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tuono benchmarks results.json",
+  "type": "object",
+  "properties": {
+    "benchmarks_results": {
+      "description": "List of benchmarks for each version of Tuono available in `benchmarks` folder",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tuono_version": {
+            "description": "Tuono version used in the benchmark",
+            "type": "string",
+            "pattern": "^v\\d+\\.\\d+\\.\\d+$"
+          },
+          "req_per_30_secs": {
+            "description": "Count if request handled in 30 seconds grouped by framework",
+            "type": "object",
+            "properties": {
+              "tuono": { "type": "integer" },
+              "nextjs_page_router": { "type": "integer" },
+              "nextjs_app_router": { "type": "integer" }
+            },
+            "required": ["tuono", "nextjs_page_router", "nextjs_app_router"]
+          }
+        },
+        "required": ["tuono_version", "req_per_30_secs"]
+      }
+    }
+  },
+  "required": ["benchmarks_results"]
+}

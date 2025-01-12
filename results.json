@@ -1,0 +1,21 @@
+{
+  "$schema": "./results-schema.json",
+  "benchmarks_results": [
+    {
+      "tuono_version": "v0.9.2",
+      "req_per_30_secs": {
+        "tuono": 4111435,
+        "nextjs_page_router": 344202,
+        "nextjs_app_router": 195590
+      }
+    },
+    {
+      "tuono_version": "v0.17.0",
+      "req_per_30_secs": {
+        "tuono": 1241083,
+        "nextjs_page_router": 311635,
+        "nextjs_app_router": 306113
+      }
+    }
+  ]
+}
