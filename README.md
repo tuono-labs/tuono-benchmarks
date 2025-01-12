@@ -1,7 +1,6 @@
 # Tuono benchmarks
 
-This repo includes multiple setups to compare the HTTP performance against
-tuono and other frameworks (check the `benchmarks/` directory).
+This repository contains various setups to compare the HTTP performance of Tuono with other frameworks. Please refer to the [`benchmarks`](./benchmarks/) directory for more details.
 
 The main goal is to make the comparison as fair as possible enhancing each framework specific
 performance improvements.
@@ -23,22 +22,25 @@ The data returned by the backend service should be a JSON including a random num
 }
 ```
 
-Then the benchmark is triggered by running the production server and query the `/` endpoint with [wrk](https://github.com/wg/wrk)
-to mock an heavy network load over the application server.
+The benchmark is triggered by running the production server and querying the `/` endpoint with [wrk](https://github.com/wg/wrk) to simulate a heavy network load on the application.
 
 ## Last benchmarked version results
 
-Tuono [v0.17.0](/benchmarks/v0.17.0)
+[v0.17.0](/benchmarks/v0.17.0)
 
+### Tuono
+
+```sh
+tuono build
+cargo run --release
 ```
-// Tuono
-> tuono build
 
-> cargo run --release
+```sh
+wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
-> wrk -t12 -c400 -d30s http://localhost:3000/
-
-Running 30s test @ http://localhost:3000/
+```text
+Running 30s test @ <http://localhost:3000/>
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency    10.10ms    8.60ms 328.41ms   92.91%
@@ -48,14 +50,18 @@ Requests/sec:  41341.09
 Transfer/sec:     23.35MB
 ```
 
+### NextJs pages router
+
+```sh
+pnpm build
+pm2 start ./ecosystem.config.js
 ```
-// NextJs pages router
-> pnpm build
 
-> pm2 start ./ecosystem.config.js
+```sh
+wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
-> wrk -t12 -c400 -d30s http://localhost:3000/
-
+```text
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -66,14 +72,18 @@ Requests/sec:  10358.80
 Transfer/sec:     14.80MB
 ```
 
+### NextJs app router
+
+```sh
+pnpm build
+pm2 start ./ecosystem.config.js
 ```
-// NextJs app router
-> pnpm build
 
-> pm2 start ./ecosystem.config.js
-
+```sh
 > wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
+```text
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev

@@ -1,15 +1,19 @@
-# Benchmarks
+# Benchmarks v0.9.2
 
 ## Results
 
+### Tuono
+
+```sh
+tuono build
+cargo run --release
 ```
-// Tuono
-> tuono build
 
-> cargo run --release
+```sh
+wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
-> wrk -t12 -c400 -d30s http://localhost:3000/
-
+```text
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -20,14 +24,18 @@ Requests/sec: 136788.14
 Transfer/sec:    103.08MB
 ```
 
+### NextJs pages router
+
+```sh
+pnpm build
+pm2 start ./ecosystem.config.js
 ```
-// NextJs pages router
-> pnpm build
 
-> pm2 start ./ecosystem.config.js
+```sh
+wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
-> wrk -t12 -c400 -d30s http://localhost:3000/
-
+```text
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -38,14 +46,18 @@ Requests/sec:  11434.43
 Transfer/sec:     16.40MB
 ```
 
+### NextJs app router
+
+```sh
+pnpm build
+pm2 start ./ecosystem.config.js
 ```
-// NextJs app router
-> pnpm build
 
-> pm2 start ./ecosystem.config.js
+```sh
+wrk -t12 -c400 -d30s http://localhost:3000/
+```
 
-> wrk -t12 -c400 -d30s http://localhost:3000/
-
+```text
 Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
