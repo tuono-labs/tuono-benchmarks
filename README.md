@@ -80,7 +80,7 @@ pm2 start ./ecosystem.config.js
 ```
 
 ```sh
-> wrk -t12 -c400 -d30s http://localhost:3000/
+wrk -t12 -c400 -d30s http://localhost:3000/
 ```
 
 ```text
