@@ -40,7 +40,7 @@ wrk -t12 -c400 -d30s http://localhost:3000/
 ```
 
 ```text
-Running 30s test @ <http://localhost:3000/>
+Running 30s test @ http://localhost:3000/
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency    10.10ms    8.60ms 328.41ms   92.91%
