@@ -93,3 +93,31 @@ Running 30s test @ http://localhost:3000/
 Requests/sec:  10170.10
 Transfer/sec:     14.53MB
 ```
+
+## Graphs
+
+<!--Made w/ Kimi K2 • Can be scripted in the future • Prompt: "Make a bar chart of the above Benchmarks for Requests and Transfers per sec in mermaid's xychart-beta. Sort from highest to lowest. Also put bulletpoints under each chart of what is the highest to lowest.")-->
+
+```mermaid
+xychart-beta
+    title "Requests/sec"
+    x-axis ["Tuono", "Next.js Pages", "Next.js App"]
+    y-axis "Requests/sec" 0 --> 50000
+    bar [41341, 10359, 10170]
+```
+
+- **Highest:** Tuono – 41,341 req/sec
+- **Next:** Next.js Pages – 10,359 req/sec
+- **Lowest:** Next.js App – 10,170 req/sec
+
+```mermaid
+xychart-beta
+    title "Transfer/sec"
+    x-axis ["Tuono", "Next.js Pages", "Next.js App"]
+    y-axis "Transfer/sec (MB)" 0 --> 30
+    bar [23.35, 14.80, 14.53]
+```
+
+- **Highest:** Tuono – 23.35 MB/sec
+- **Next:** Next.js Pages – 14.80 MB/sec
+- **Lowest:** Next.js App – 14.53 MB/sec
